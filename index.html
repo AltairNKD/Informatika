@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Школьная Информатика</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify.min.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <i class="fas fa-laptop-code"></i>
+            <span>Информатика</span>
+        </div>
+        <ul class="nav-links">
+            <li data-topic="algorithms">
+                <i class="fas fa-sitemap"></i>
+                <span>Алгоритмы</span>
+            </li>
+            <li data-topic="programming">
+                <i class="fas fa-code"></i>
+                <span>Программирование</span>
+            </li>
+            <li data-topic="data-types">
+                <i class="fas fa-database"></i>
+                <span>Типы данных</span>
+            </li>
+            <li data-topic="binary">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Системы счисле��ия</span>
+            </li>
+            <li data-topic="computer-science">
+                <i class="fas fa-microchip"></i>
+                <span>Устройство ПК</span>
+            </li>
+            <li data-topic="networks">
+                <i class="fas fa-network-wired"></i>
+                <span>Сети</span>
+            </li>
+            <li data-topic="cybersecurity">
+                <i class="fas fa-shield-alt"></i>
+                <span>Кибербезопасность</span>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <div class="topic-content" id="algorithms">
+            <h1>Алгоритмы</h1>
+            
+            <div class="algorithm-intro">
+                <h2>Что такое алгоритм?</h2>
+                <p>Алгоритм — это последовательность точно определённых действий, выполнение которых приводит к решению поставленной задачи.</p>
+                
+                <div class="algorithm-properties">
+                    <h3>Свойства алгоритмов:</h3>
+                    <div class="properties-grid">
+                        <div class="property-card">
+                            <i class="fas fa-list-ol"></i>
+                            <h4>Дискретность</h4>
+                            <p>Алгоритм должен состоять из конкретных действий, следующих в определённом порядке</p>
+                        </div>
+                        <div class="property-card">
+                            <i class="fas fa-bullseye"></i>
+                            <h4>Определённость</h4>
+                            <p>Каждое действие алгоритма должно быть точно определено</p>
+                        </div>
+                        <div class="property-card">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Результативность</h4>
+                            <p>Алгоритм должен приводить к решению задачи за конечное число шагов</p>
+                        </div>
+                        <div class="property-card">
+                            <i class="fas fa-random"></i>
+                            <h4>Массовость</h4>
+                            <p>Алгоритм должен решать не од конкетную задачу, а цеый клас однотипных задач</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="algorithm-types">
+                <h2>Виды алгоритмов</h2>
+                <div class="types-tabs">
+                    <button class="tab-btn active" data-type="linear">Линейный</button>
+                    <button class="tab-btn" data-type="branching">Разветвляющийся</button>
+                    <button class="tab-btn" data-type="cyclic">Циклический</button>
+                </div>
+
+                <!-- Линейный алгоритм -->
+                <div class="type-content active" id="linear">
+                    <div class="type-theory">
+                        <h3>Линейный алгоритм</h3>
+                        <p>Алгоритм, в котором действия выполняются последовательно одно за другим, без ветвлений и повторений.</p>
+                        <div class="example-block">
+                            <h4>Пример: Приготовление чая</h4>
+                            <ol>
+                                <li>Вкипятит воду</li>
+                                <li>Поожить чайный пакетик в чашку</li>
+                                <li>Залить кипятком</li>
+                                <li>Подождать 3-5 минут</li>
+                                <li>Вынуть чайный пакетик</li>
+                            </ol>
+                        </div>
+                        <div class="features">
+                            <h4>Особенности:</h4>
+                            <ul>
+                                <li>Простая структура</li>
+                                <li>Последовательное выполнение</li>
+                                <li>Нет условий и циклов</li>
+                                <li>Предсказуемый результат</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="type-visualization">
+                        <svg width="300" height="200" viewBox="0 0 300 200">
+                            <rect x="100" y="10" width="100" height="40" rx="5" fill="#00b894"/>
+                            <text x="150" y="35" text-anchor="middle" fill="white">Начало</text>
+                            
+                            <line x1="150" y1="50" x2="150" y2="80" stroke="#666" stroke-width="2"/>
+                            <rect x="75" y="80" width="150" height="40" rx="5" fill="#0984e3"/>
+                            <text x="150" y="105" text-anchor="middle" fill="white">Действие 1</text>
+                            
+                            <line x1="150" y1="120" x2="150" y2="150" stroke="#666" stroke-width="2"/>
+                            <rect x="75" y="150" width="150" height="40" rx="5" fill="#0984e3"/>
+                            <text x="150" y="175" text-anchor="middle" fill="white">Действие 2</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Разветвляющийся алгоритм -->
+                <div class="type-content" id="branching">
+                    <div class="type-theory">
+                        <h3>Разветвляющийся алгоритм</h3>
+                        <p>Алгоритм, в котором в зависимости от условия выполняется та или иная последовательность действий.</p>
+                        <div class="example-block">
+                            <h4>Пример: Проверка вораста</h4>
+                            <ol>
+                                <li>Получить возраст пользователя</li>
+                                <li>Если возраст ≥ 18:
+                                    <ul>
+                                        <li>Разрешить доступ</li>
+                                    </ul>
+                                </li>
+                                <li>Иначе:
+                                    <ul>
+                                        <li>Отказать в доступе</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="features">
+                            <h4>Особенности:</h4>
+                            <ul>
+                                <li>Наличие условий</li>
+                                <li>Несколько путей выполнения</li>
+                                <li>Принятие решений</li>
+                                <li>Результат зависит от условий</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="type-visualization">
+                        <svg width="300" height="300" viewBox="0 0 300 300">
+                            <rect x="100" y="10" width="100" height="40" rx="5" fill="#00b894"/>
+                            <text x="150" y="35" text-anchor="middle" fill="white">Начало</text>
+                            
+                            <line x1="150" y1="50" x2="150" y2="80" stroke="#666" stroke-width="2"/>
+                            <path d="M150,80 L200,120 L150,160 L100,120 Z" fill="#f1c40f"/>
+                            <text x="150" y="125" text-anchor="middle" fill="white">Условие</text>
+                            
+                            <line x1="100" y1="120" x2="50" y2="180" stroke="#666" stroke-width="2"/>
+                            <line x1="200" y1="120" x2="250" y2="180" stroke="#666" stroke-width="2"/>
+                            
+                            <rect x="25" y="180" width="100" height="40" rx="5" fill="#0984e3"/>
+                            <rect x="175" y="180" width="100" height="40" rx="5" fill="#0984e3"/>
+                            <text x="75" y="205" text-anchor="middle" fill="white">Да</text>
+                            <text x="225" y="205" text-anchor="middle" fill="white">т</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Циклический алгоритм -->
+                <div class="type-content" id="cyclic">
+                    <div class="type-theory">
+                        <h3>Циклический алгоритм</h3>
+                        <p>Алгоритм, в котором некоторые действия повторяются многократно, пока выполняется определенное условие.</p>
+                        <div class="example-block">
+                            <h4>Пример: Подсчет суммы чисел</h4>
+                            <ol>
+                                <li>Установить сумму = 0</li>
+                                <li>Для каждого числа от 1 до N:
+                                    <ul>
+                                        <li>Добавить число к сумме</li>
+                                    </ul>
+                                </li>
+                                <li>Вывести результат</li>
+                            </ol>
+                        </div>
+                        <div class="features">
+                            <h4>Особенности:</h4>
+                            <ul>
+                                <li>Повторение действий</li>
+                                <li>Наличие счетчика или условия</li>
+                                <li>Возможность бесконечного цикла</li>
+                                <li>Экономия кода</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="type-visualization">
+                        <svg width="300" height="300" viewBox="0 0 300 300">
+                            <rect x="100" y="10" width="100" height="40" rx="5" fill="#00b894"/>
+                            <text x="150" y="35" text-anchor="middle" fill="white">Начало</text>
+                            
+                            <line x1="150" y1="50" x2="150" y2="80" stroke="#666" stroke-width="2"/>
+                            <path d="M150,80 L200,120 L150,160 L100,120 Z" fill="#f1c40f"/>
+                            <text x="150" y="125" text-anchor="middle" fill="white">Условие</text>
+                            
+                            <path d="M200,120 C250,120 250,200 200,200" stroke="#666" stroke-width="2" fill="none"/>
+                            <rect x="75" y="180" width="150" height="40" rx="5" fill="#0984e3"/>
+                            <text x="150" y="205" text-anchor="middle" fill="white">Действие</text>
+                            <line x1="150" y1="220" x2="150" y2="250" stroke="#666" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sorting-algorithms">
+                <h2>Алгоритмы сортировки</h2>
+                <div class="sorting-controls">
+                    <select id="sorting-type">
+                        <option value="bubble">Пузырьковая сортировка</option>
+                        <option value="selection">Сортировка выбором</option>
+                        <option value="insertion">Сортировка вставками</option>
+                        <option value="quick">Быстрая сортировка</option>
+                    </select>
+                    <div class="control-buttons">
+                        <button class="action-btn" onclick="generateNewArray()">Новый массив</button>
+                        <button class="action-btn primary" onclick="startSorting()">Начать сортировку</button>
+                        <button class="action-btn danger" onclick="stopSorting()" id="stopButton" style="display: none;">
+                            <i class="fas fa-stop"></i> Остановить
+                        </button>
+                    </div>
+                </div>
+                <div class="sorting-visualizer">
+                    <div class="bars-container"></div>
+                    <div class="sorting-info">
+                        <div class="complexity-info">
+                            <h4>Сложность алгоритма:</h4>
+                            <p id="time-complexity">O(n²)</p>
+                            <p id="space-complexity">O(1)</p>
+                        </div>
+                        <div class="steps-counter">
+                            <h4>Количество шагов:</h4>
+                            <p id="steps-count">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-content hidden" id="programming">
+            <h1>Программирование</h1>
+
+            <!-- Введение -->
+            <div class="intro-section">
+                <h2>Что такое программирование?</h2>
+                <p>Программирование - это процесс создания компьютерных программ с помощью языков программирования для решения различных задач.</p>
+            </div>
+
+            <!-- Основные концепции -->
+            <div class="network-section">
+                <h2>Основные концепции</h2>
+                <div class="network-grid">
+                    <!-- Алгоритмы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-sitemap"></i>
+                            <h3>Алгоритмы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Последовательность действий</p>
+                            <ul>
+                                <li>Решение задач</li>
+                                <li>Чёткие инструкции</li>
+                                <li>Конечный результат</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Переменные -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-box"></i>
+                            <h3>Переменные</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Хранение данных</p>
+                            <ul>
+                                <li>Разные типы данных</li>
+                                <li>Изменяемые значения</li>
+                                <li>Доступ к памяти</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Функции -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-cube"></i>
+                            <h3>Функции</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Блоки кода</p>
+                            <ul>
+                                <li>Многократное использование</li>
+                                <li>Принимают параметры</li>
+                                <li>Возвращают результат</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Языки программирования -->
+            <div class="network-section">
+                <h2>Языки программирования</h2>
+                <div class="network-grid">
+                    <!-- Python -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fab fa-python"></i>
+                            <h3>Python</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Простой и понятный язык</p>
+                            <ul>
+                                <li>Лёгкий синтаксис</li>
+                                <li>Много библиотек</li>
+                                <li>Популярный язык</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Язык веб-разработки</p>
+                            <ul>
+                                <li>Работает в браузере</li>
+                                <li>Создание сайтов</li>
+                                <li>Интерактивность</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Java -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fab fa-java"></i>
+                            <h3>Java</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Универсальный язык</p>
+                            <ul>
+                                <li>Кроссплатформенность</li>
+                                <li>Android разработка</li>
+                                <li>Корпоративные системы</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Инструменты разработки -->
+            <div class="network-section">
+                <h2>Инструменты разработки</h2>
+                <div class="network-grid">
+                    <!-- Редакторы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-edit"></i>
+                            <h3>Редакторы кода</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Среды разработки</p>
+                            <ul>
+                                <li>Visual Studio Code</li>
+                                <li>PyCharm</li>
+                                <li>IntelliJ IDEA</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fab fa-git-alt"></i>
+                            <h3>Контроль версий</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Управление кодом</p>
+                            <ul>
+                                <li>Git и GitHub</li>
+                                <li>История изменений</li>
+                                <li>Командная работа</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-content hidden" id="data-types">
+            <h1>Типы данных</h1>
+
+            <!-- Введение -->
+            <div class="intro-section">
+                <h2>Что такое типы данных?</h2>
+                <p>Тип данных определяет, какие значения может хранить переменная и какие операции можно с ней выполнять.</p>
+            </div>
+
+            <!-- Основные типы -->
+            <div class="network-section">
+                <h2>Основные типы данных</h2>
+                <div class="network-grid">
+                    <!-- Числовые типы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-hashtag"></i>
+                            <h3>Числовые типы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Для хранения чисел разных видов</p>
+                            <ul>
+                                <li>int: целые числа (±2 млрд)</li>
+                                <li>float: дробные числа</li>
+                                <li>double: точные дробные числа</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Текстовые типы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-font"></i>
+                            <h3>Текстовые типы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Для хранения текста и символов</p>
+                            <ul>
+                                <li>char: одиночный символ</li>
+                                <li>String: текстовая строка</li>
+                                <li>Поддержка Unicode</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Логический тип -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Логический тип</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Для условий и проверок</p>
+                            <ul>
+                                <li>true (истина)</li>
+                                <li>false (ложь)</li>
+                                <li>Используется в условиях</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Массивы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-layer-group"></i>
+                            <h3>Массивы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Наборы однотипных данных</p>
+                            <ul>
+                                <li>Фиксированная длина</li>
+                                <li>Индексаци с нуля</li>
+                                <li>Быстрый доступ к элементам</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Операции с данными -->
+            <div class="network-section">
+                <h2>Операции с данными</h2>
+                <div class="network-grid">
+                    <!-- Арифметические операции -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-calculator"></i>
+                            <h3>Арифметические</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Математические действия</p>
+                            <ul>
+                                <li>Сложение (+)</li>
+                                <li>Вычитание (-)</li>
+                                <li>Умножение и деление</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Логические операции -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>Логические</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Операции сравнения</p>
+                            <ul>
+                                <li>И (&&), ИЛИ (||)</li>
+                                <li>Больше/меньше</li>
+                                <li>Равно/не равно</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-content hidden" id="binary">
+            <h1>Системы счисления</h1>
+            
+            <!-- Конвертер -->
+            <section class="number-system-section">
+                <h2>Конвертер систем счисления</h2>
+                <div class="converter-container">
+                    <div class="input-group">
+                        <label for="decimal-input">Введите десятичное число:</label>
+                        <input type="number" id="decimal-input" placeholder="Например: 42">
+                    </div>
+                    <div class="conversion-results">
+                        <div class="result-card">
+                            <h3>Двоичная система</h3>
+                            <div id="binary-result" class="result-value">Результат: </div>
+                        </div>
+                        <div class="result-card">
+                            <h3>Восьмеричная система</h3>
+                            <div id="octal-result" class="result-value">Результат: </div>
+                        </div>
+                        <div class="result-card">
+                            <h3>Шестнадцатеричная система</h3>
+                            <div id="hex-result" class="result-value">Результат: </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="topic-content hidden" id="computer-science">
+            <h1>Устройство компьютера</h1>
+
+            <!-- Введение -->
+            <div class="intro-section">
+                <h2>Что такое компьютер?</h2>
+                <p>Компьютер - это электронное устройство, состоящее из различных компонентов, каждый из которых выполняет свои функции.</p>
+            </div>
+
+            <!-- Основные компоненты -->
+            <div class="network-section">
+                <h2>Основные компоненты</h2>
+                <div class="network-grid">
+                    <!-- Процессор -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-microchip"></i>
+                            <h3>Процессор (CPU)</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Главный компонент компьютера</p>
+                            <ul>
+                                <li>Выполняет вычисления</li>
+                                <li>Управляет устройствами</li>
+                                <li>Обрабатывает данные</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Оперативная память -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-memory"></i>
+                            <h3>Оперативная память</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Временное хранение данных</p>
+                            <ul>
+                                <li>Быстрый доступ к данным</li>
+                                <li>Хранит запущенные программы</li>
+                                <li>Очищается при выключении</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Жесткий диск -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-hdd"></i>
+                            <h3>Жесткий диск</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Постоянное хранение данных</p>
+                            <ul>
+                                <li>Хранит все файлы</li>
+                                <li>Большой объём данных</li>
+                                <li>Не теряет данные без питания</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Материнская плата -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Материнская плата</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Соединяет все компоненты</p>
+                            <ul>
+                                <li>Основа компьютера</li>
+                                <li>Содержит разъёмы</li>
+                                <li>Обеспечивает связь</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Видеокарта -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-tv"></i>
+                            <h3>Видеокарта</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Обработка графики</p>
+                            <ul>
+                                <li>Вывод изображения</li>
+                                <li>Обработка 3D</li>
+                                <li>Игры и графика</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Блок питания -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>Блок питания</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Питание компьютера</p>
+                            <ul>
+                                <li>Подаёт электричество</li>
+                                <li>Защита от перегрузок</li>
+                                <li>Стабильная работа</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Периферийные устройства -->
+            <div class="network-section">
+                <h2>Периферийные устройства</h2>
+                <div class="network-grid">
+                    <!-- Монитор -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-desktop"></i>
+                            <h3>Монитор</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Вывод изображения</p>
+                            <ul>
+                                <li>Отображение информации</li>
+                                <li>Разные разрешения</li>
+                                <li>Различные технологии</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Клавиатура и мышь -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-keyboard"></i>
+                            <h3>Устройства ввода</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Управление компьютером</p>
+                            <ul>
+                                <li>Клавиатура для текста</li>
+                                <li>Мышь для навигации</li>
+                                <li>Удобное управление</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-content hidden" id="networks">
+            <h1>Компьютерные сети</h1>
+
+            <!-- Введение -->
+            <div class="intro-section">
+                <h2>Что такое компьютерная сеть?</h2>
+                <p>Компьютерная сеть - это два или более компьютеров, соединённых между собой для обмена информацией и совместного испоьзования ресурсов.</p>
+            </div>
+
+            <!-- Основные виды сетей -->
+            <div class="network-section">
+                <h2>Виды компьютерных сетей</h2>
+                <div class="network-grid">
+                    <!-- Локальная сеть -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-building"></i>
+                            <h3>Локальная сеть</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Сеть внутри одного здания или нбольшой территории</p>
+                            <ul>
+                                <li>Соединяет компьютеры в одном месте</li>
+                                <li>Высокая скорость передачи данных</li>
+                                <li>Общий доступ к принтерам и файлам</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Глобальная сеть -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-globe"></i>
+                            <h3>Глобальная сеть</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Сеть, охватывающая большие территории</p>
+                            <ul>
+                                <li>Соединяет компьютеры по всему миру</li>
+                                <li>Интернет - самая большая глобальная сеть</li>
+                                <li>Доступ к сайтам и онлайн-сервисам</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Способы подключения -->
+            <div class="connection-section">
+                <h2>Способы подключения к сети</h2>
+                <div class="connection-grid">
+                    <!-- Проводное подключение -->
+                    <div class="connection-card">
+                        <div class="card-header">
+                            <i class="fas fa-ethernet"></i>
+                            <h3>Проводное подключение</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li>Стабильное соединение</li>
+                                <li>Высокая скорость</li>
+                                <li>Требует прокладки кабеля</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Беспроводное подключение -->
+                    <div class="connection-card">
+                        <div class="card-header">
+                            <i class="fas fa-wifi"></i>
+                            <h3>Беспроводное подключение</h3>
+                        </div>
+                        <div class="card-content">
+                            <ul>
+                                <li>Удобство подключения</li>
+                                <li>Мобильность</li>
+                                <li>Wi-Fi и мобильный интернет</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Основное оборудование -->
+            <div class="equipment-section">
+                <h2>Сетевое оборудование</h2>
+                <div class="equipment-grid">
+                    <!-- Роутер -->
+                    <div class="equipment-card">
+                        <div class="card-header">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <h3>Роутер</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Главное устройство домашней сети</p>
+                            <ul>
+                                <li>Раздаёт интернет</li>
+                                <li>Создаёт Wi-Fi сеть</li>
+                                <li>Соединяет устройства</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Сетевой кабель -->
+                    <div class="equipment-card">
+                        <div class="card-header">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Сетевой кабель</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Для проводного подключения</p>
+                            <ul>
+                                <li>Надёжная связь</li>
+                                <li>Высокая скорость</li>
+                                <li>Защита от помех</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topic-content hidden" id="cybersecurity">
+            <h1>Кибербезопасность</h1>
+
+            <!-- Введение -->
+            <div class="intro-section">
+                <h2>Что такое кибербезопасность?</h2>
+                <p>Кибербезопасность - это защита компьютеров, сетей и данных от цифровых атак и вредоносных программ.</p>
+            </div>
+
+            <!-- Основные угрозы -->
+            <div class="network-section">
+                <h2>Основные угрозы</h2>
+                <div class="network-grid">
+                    <!-- Вирусы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-virus"></i>
+                            <h3>Компьютерные вирусы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Вредоносные программы</p>
+                            <ul>
+                                <li>Заражают файлы</li>
+                                <li>Замедляют работу</li>
+                                <li>Портят данные</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Взлом -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-user-ninja"></i>
+                            <h3>Взлом</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Несанкционированный доступ</p>
+                            <ul>
+                                <li>Кража паролей</li>
+                                <li>Взлом аккаунтов</li>
+                                <li>Кража данных</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Методы защиты -->
+            <div class="network-section">
+                <h2>Методы защиты</h2>
+                <div class="network-grid">
+                    <!-- Пароли -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-key"></i>
+                            <h3>Надёжные пароли</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Правила создания паролей</p>
+                            <ul>
+                                <li>Минимум 8 символов</li>
+                                <li>Буквы, цифры и символы</li>
+                                <li>Разные пароли для разных сайтов</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Антивирусы -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Антивирусы</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Защита от вирусов</p>
+                            <ul>
+                                <li>Проверка файлов</li>
+                                <li>Блокировка угроз</li>
+                                <li>Защита системы</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правила безопасности -->
+            <div class="network-section">
+                <h2>Правила безопасности</h2>
+                <div class="network-grid">
+                    <!-- Осторожность -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h3>Будьте осторожны</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Основные правила</p>
+                            <ul>
+                                <li>Не открывайте подозрительные письма</li>
+                                <li>Не скачивайте файлы с незнакомых сайтов</li>
+                                <li>Не переходите по подозрительным ссылкам</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Обновления -->
+                    <div class="network-card">
+                        <div class="card-header">
+                            <i class="fas fa-sync"></i>
+                            <h3>Обновления</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Поддержка безопасности</p>
+                            <ul>
+                                <li>Регулярно обновляйте систему</li>
+                                <li>Обновляйте антивирус</li>
+                                <li>Следите за безопасностью</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
